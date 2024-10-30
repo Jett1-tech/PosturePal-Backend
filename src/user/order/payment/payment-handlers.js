@@ -1,8 +1,8 @@
 const crypto = require("crypto");
 const axios = require("axios");
 const orderService = require("../order-service");
-const dotenv = require('dotenv').config()
-console.log("dot", dotenv);
+// const dotenv = require('dotenv').config()
+// console.log("dot", dotenv);
 
 
 const API_URL = process.env.API_URL;
