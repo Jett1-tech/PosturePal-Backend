@@ -16,12 +16,18 @@ db.connect();
 // Middleware
 app.use(
   cors({
-   origin: ["https://posture-pal-fe.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], // thêm các phương thức HTTP được phép
-    allowedHeaders: ["Content-Type", "Authorization"], // thêm các headers được phép
+    origin: ["https://posture-pal-fe.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Thêm OPTIONS
+    allowedHeaders: [
+      "Content-Type", 
+      "Authorization",
+      "X-Requested-With",
+      "Accept",
+      "Origin"
+    ],
     credentials: true,
-    preflightContinue: true, // cho phép preflight requests
-    optionsSuccessStatus: 200,
+    preflightContinue: false, // Đổi thành false
+    optionsSuccessStatus: 204  // Đổi thành 204 cho OPTIONS request
   })
 );
 app.use(express.json());
