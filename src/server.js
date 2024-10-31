@@ -16,7 +16,7 @@ db.connect();
 // Middleware
 app.use(
   cors({
-    origin: ["https://posture-pal-lo1w3jzcc-nhanhnde160312-fpteduvns-projects.vercel.app"],
+    origin: ["https://posture-pal-fe.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Thêm OPTIONS
     allowedHeaders: [
       "Content-Type", 
