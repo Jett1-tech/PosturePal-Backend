@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
 });
 
 // Các route khác
-app.use("/api/cdaddress", require("./address/address-routes")());
+app.use("/api/address", require("./address/address-routes")());
 app.use("/api/user", require("./user/user-routes"));
 app.use("/api/products", require("./product/product-routes"));
 app.use("/api/cart", require("./user/cart/cart-routes"));
