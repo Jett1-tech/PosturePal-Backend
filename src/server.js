@@ -16,8 +16,12 @@ db.connect();
 // Middleware
 app.use(
   cors({
-    origin: [process.env.BASE_FE_URL],
+   origin: ["https://posture-pal-fe.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], // thêm các phương thức HTTP được phép
+    allowedHeaders: ["Content-Type", "Authorization"], // thêm các headers được phép
     credentials: true,
+    preflightContinue: true, // cho phép preflight requests
+    optionsSuccessStatus: 200,
   })
 );
 app.use(express.json());
